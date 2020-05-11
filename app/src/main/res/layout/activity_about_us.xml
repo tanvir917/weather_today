@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sdlab.jings.weathertoday.AboutUs">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layoutColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weather Today"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColorHighlight="@color/colorAccent"
+            android:gravity="center"
+            android:id="@+id/name"
+            android:textAllCaps="true"
+            android:layout_marginTop="100dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_t"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/tanvird"
+            android:layout_margin="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/name"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_t2"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@+id/tanvird"
+            android:layout_margin="20dp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

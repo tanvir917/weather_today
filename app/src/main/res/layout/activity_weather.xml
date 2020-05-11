@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.sdlab.jings.weathertoday.WeatherActivity"
+    android:background="@drawable/bcimg1"
+    android:id="@+id/relative_layout">
+
+    <ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="34dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:hapticFeedbackEnabled="true"
+    android:background="@color/layoutColor"
+    android:id="@+id/todayTemp"
+    android:clickable="true"
+    android:focusable="true">
+    <ImageView
+        android:id="@+id/weatherIconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/condition_icon"
+        android:src="@drawable/icon_na" />
+
+    <TextView
+        android:id="@+id/temperatureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherIconImageView"
+        android:textColor="@color/light_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/temperature"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/conditionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temperatureTextView"
+        android:textColor="@color/light_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/condition"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conditionTextView"
+        android:textColor="@color/light_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/location"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conditionTextView" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationTextView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Date"
+        android:textColor="@color/light_text" />
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sunriseTextView"
+        android:id="@+id/forecastContainer"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:baselineAligned="false"
+        android:background="@color/layoutColor">
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+            android:id="@+id/forecast_0"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_weather_condition" />
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+            android:id="@+id/forecast_1"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_weather_condition" />
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+            android:id="@+id/forecast_2"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_weather_condition" />
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+            android:id="@+id/forecast_3"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_weather_condition" />
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+            android:id="@+id/forecast_4"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_weather_condition" />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/layoutColor">
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+                android:id="@+id/forecast_5"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_weather_condition" />
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+                android:id="@+id/forecast_6"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_weather_condition" />
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+                android:id="@+id/forecast_7"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_weather_condition" />
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+                android:id="@+id/forecast_8"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_weather_condition" />
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.sdlab.jings.weathertoday.fragments.WeatherConditionFragments"
+                android:id="@+id/forecast_9"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_weather_condition" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hapticFeedbackEnabled="true"
+        android:id="@+id/todaysDetailsLayout"
+        android:background="@color/layoutColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Details"
+            android:id="@+id/todaysDetails"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/light_text"
+            android:layout_margin="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity: "
+            android:id="@+id/humidityTextView"
+            android:textStyle="bold"
+            android:textColor="#ddfffefe"
+            android:textColorHighlight="@color/dark"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind Chill: "
+            android:textColor="#ddfffefe"
+            android:textStyle="bold"
+            android:id="@+id/windTextView"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind Direction: "
+            android:textColor="#ddfffefe"
+            android:textStyle="bold"
+            android:id="@+id/winddirectionTextView"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind Speed: "
+            android:textColor="#ddfffefe"
+            android:textStyle="bold"
+            android:id="@+id/windSpeedTextView"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pressure: "
+            android:id="@+id/pressureTextView"
+            android:textColor="#ddfffefe"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunrise: "
+            android:textStyle="bold"
+            android:textColor="#ddfffefe"
+            android:id="@+id/sunriseTextView"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunset: "
+            android:textColor="#ddfffefe"
+            android:id="@+id/sunsetTextView"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            />
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+</RelativeLayout>
